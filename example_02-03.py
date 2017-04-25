@@ -10,9 +10,9 @@ if __name__ == '__main__':
 
         if not r:  # if frame is None:
             break
-        
+
         cv2.imshow('Example 2-3', frame)
- 
+
         if cv2.waitKey(33) != 255:  # waitKey(n > 0) supposed to
             break                   # return -1 if no key pressed
                                     # within n ms.  Python treats
