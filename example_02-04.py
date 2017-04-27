@@ -31,8 +31,9 @@ if __name__ == '__main__':
     print('Video has {} frames of dimensions({}, {}).'.format(
             frames, tmpw, tmph))
 
-    cv2.createTrackbar('Position', 'Example 2-4',
-            g_slider_position, frames, onTrackbarSlide)
+    cv2.createTrackbar(
+            'Position', 'Example 2-4', g_slider_position, frames,
+            onTrackbarSlide)
 
     while True:
         if g_run != 0:
@@ -47,8 +48,8 @@ if __name__ == '__main__':
             current_pos = int(g_cap.get(cv2.CAP_PROP_POS_FRAMES))
             g_dontset = 1
 
-            cv2.setTrackbarPos('Position', 'Example 2-4',
-                    current_pos)
+            cv2.setTrackbarPos(
+                    'Position', 'Example 2-4', current_pos)
             cv2.imshow('Example 2-4', frame)
 
             g_run -= 1

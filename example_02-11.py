@@ -11,8 +11,8 @@ if __name__ == '__main__':
     size = (int(capture.get(cv2.CAP_PROP_FRAME_WIDTH)),
             int(capture.get(cv2.CAP_PROP_FRAME_HEIGHT)))
 
-    writer = cv2.VideoWriter(sys.argv[2],
-            cv2.VideoWriter_fourcc(*'MJPG'), fps, size)
+    writer = cv2.VideoWriter(
+            sys.argv[2], cv2.VideoWriter_fourcc(*'MJPG'), fps, size)
             # Book has CV_FOURCC('M', 'J', 'P', 'G').
 
     while True:
@@ -22,10 +22,11 @@ if __name__ == '__main__':
              break
 
         cv2.imshow('Example 2-11 (original)', bgr_frame)
+        rows, cols = bgr_frame.shape[:2]
 
-        logpolar_frame = cv2.logPolar(bgr_frame,
-                (bgr_frame.shape[0] // 2, bgr_frame.shape[1] // 2),
-                40, cv2.WARP_FILL_OUTLIERS)
+        logpolar_frame = cv2.logPolar(
+                bgr_frame, (cols // 2, rows // 2), 40,
+                cv2.WARP_FILL_OUTLIERS)
                 # Book has, e.g., bgr_frame.cols / 2...
 
         cv2.imshow('Example 2-11 (log-polar)', logpolar_frame)
