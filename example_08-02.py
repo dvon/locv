@@ -6,13 +6,13 @@ import yaml  # Requires pyyaml package.
 if __name__ == '__main__':
     d = {}
 
-    d['framecount'] = 5
+    d['frameCount'] = 5
     d['calibrationDate'] = time.localtime()
     d['cameraMatrix'] = numpy.array(
             [[1000, 0, 320], [0, 1000, 240], [0, 0, 1]],
-            dtype='float64')
+            dtype=float)
     d['distCoeffs'] = numpy.array(
-            [0.1, 0.01, -0.001, 0, 0], dtype='float64')
+            [0.1, 0.01, -0.001, 0, 0], dtype=float)
 
     m = []
     
