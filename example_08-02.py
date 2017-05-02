@@ -1,3 +1,8 @@
+# Not sure how useful this is, since Python API doesn't include
+# OpenCV features being illustrated in the example.  This is just
+# my attempt to accomplish the same things using Python instead
+# of C++ / OpenCV.
+
 import numpy
 import random
 import time
