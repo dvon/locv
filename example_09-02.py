@@ -19,7 +19,7 @@ def my_mouse_callback(event, x, y, flags, param):
     global box, drawing_box
 
     image = param
-    
+
     if event == cv2.EVENT_MOUSEMOVE:
         if drawing_box:
             box[2] = x - box[0]    # box.width = x - box.x
@@ -31,21 +31,21 @@ def my_mouse_callback(event, x, y, flags, param):
 
     elif event == cv2.EVENT_LBUTTONUP:
         drawing_box = False
-        
+
         if box[2] < 0:
             box[0] += box[2]
             box[2] *= -1
-        
+
         if box[3] < 0:
             box[1] += box[3]
             box[3] *= -1
-        
+
         draw_box(image, box)
 
 
 if __name__ == '__main__':
     global box, drawing_box
-    
+
     drawing_box = False
 
     help()
@@ -53,19 +53,19 @@ if __name__ == '__main__':
             # ...cv::Rect(-1, -1, 0, 0)
     image = numpy.zeros((200, 200, 3), dtype=numpy.uint8)
             # cv::Mat image(200, 200, CV_8UC3)
-            
+
     # Three extra lines here in original example?
 
     cv2.namedWindow('Box Example')
     cv2.setMouseCallback('Box Example', my_mouse_callback, image)
-    
+
     while True:
         temp = image.copy()
-        
+
         if drawing_box:
             draw_box(temp, box)
 
         cv2.imshow('Box Example', temp)
-        
+
         if cv2.waitKey(15) == 27:
             break
