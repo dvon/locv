@@ -6,3 +6,6 @@ As I work my way through Adrian Kaehler and Gary Bradski's
 I'm attempting to translate the examples into Python 3.  The
 original C++ examples are
 [here](https://github.com/oreillymedia/Learning-OpenCV-3_examples).
+
+I'm skipping examples 9-3 through 9-11, since I'm not set up to
+run with QT or Windows GUI libraries.
